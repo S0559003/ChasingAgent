@@ -1,1 +1,1 @@
-# ChasingAgent
+# MLAgents_Catcher_and_Avoider
