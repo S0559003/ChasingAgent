@@ -1,0 +1,173 @@
+\hypertarget{class_catcher_agent}{}\section{Catcher\+Agent Class Reference}
+\label{class_catcher_agent}\index{CatcherAgent@{CatcherAgent}}
+
+
+Representing a concrete instance of an Agent. A Catcher Agent. \mbox{\hyperlink{class_catcher_agent}{Catcher\+Agent}} is an Agent trying to catch other objects.  
+
+
+Inheritance diagram for Catcher\+Agent\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_catcher_agent}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_catcher_agent_aeb871db4779f1da715e829b40c6087b0}{Initialize\+Agent}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the agent eg. initialize agents attributes with objects found on the scene. This method should be called one time before the training starts. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_catcher_agent_aece1c1e97740166d52f5ed4defbe9ace}{Agent\+Reset}} ()
+\begin{DoxyCompactList}\small\item\em Reset when done. eg. reset agents attributes, agents area etc. Is run everytime the agent is done with his job. Including the first run. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_catcher_agent_ab8de74f6eb16a987980e951a442ab247}{Collect\+Observations}} ()
+\begin{DoxyCompactList}\small\item\em Collect all observations from the agents area to use for making decission. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_catcher_agent_a255f4b05c7f722b4d92cfeb6563d963d}{Agent\+Action}} (float\mbox{[}$\,$\mbox{]} vector\+Action, string text\+Action)
+\begin{DoxyCompactList}\small\item\em Apply vector action. The agent receives decisions represented in a vector with floating point numbers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Game\+Object \mbox{\hyperlink{class_catcher_agent_a5158fa0d75280a5131037cd20d7e3afd}{goall}}
+\begin{DoxyCompactList}\small\item\em This is a Game\+Object representing the goal this Agent is catching \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_catcher_agent_a90d294825b74176926dfee484ab56af8}{speed}}
+\begin{DoxyCompactList}\small\item\em Speed parameter of the Agent \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_catcher_agent_a16a95360c49d63206557576218ca42d2}{On\+Collision\+Enter}} (Collision collision)
+\begin{DoxyCompactList}\small\item\em Check if agents gigidbody collided with other objects in the scene and react on it \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Rigidbody \mbox{\hyperlink{class_catcher_agent_a2e5c259c9930c0d93aac6b64177c95c1}{agent\+Rigidbody}}
+\begin{DoxyCompactList}\small\item\em Agents Rigid\+Body to apply physics on this agent. \end{DoxyCompactList}\item 
+Ray\+Perception \mbox{\hyperlink{class_catcher_agent_af0211765225d989587ca410ac3124662}{ray\+Perception}}
+\begin{DoxyCompactList}\small\item\em Container for holding vector observations from the agents sorrounding. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_agent_area}{Agent\+Area}} \mbox{\hyperlink{class_catcher_agent_a92d790163f19c9d8ba3fb5655be02575}{agent\+Area}}
+\begin{DoxyCompactList}\small\item\em The Area the Agent is collecting observation and taking action \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Representing a concrete instance of an Agent. A Catcher Agent. \mbox{\hyperlink{class_catcher_agent}{Catcher\+Agent}} is an Agent trying to catch other objects. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_catcher_agent_a255f4b05c7f722b4d92cfeb6563d963d}\label{class_catcher_agent_a255f4b05c7f722b4d92cfeb6563d963d}} 
+\index{CatcherAgent@{CatcherAgent}!AgentAction@{AgentAction}}
+\index{AgentAction@{AgentAction}!CatcherAgent@{CatcherAgent}}
+\subsubsection{\texorpdfstring{AgentAction()}{AgentAction()}}
+{\footnotesize\ttfamily override void Catcher\+Agent.\+Agent\+Action (\begin{DoxyParamCaption}\item[{float \mbox{[}$\,$\mbox{]}}]{vector\+Action,  }\item[{string}]{text\+Action }\end{DoxyParamCaption})}
+
+
+
+Apply vector action. The agent receives decisions represented in a vector with floating point numbers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vector\+Action} & Vector containing float values from -\/1 to 1. Representing actions the agent will perform.\\
+\hline
+{\em text\+Action} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_catcher_agent_aece1c1e97740166d52f5ed4defbe9ace}\label{class_catcher_agent_aece1c1e97740166d52f5ed4defbe9ace}} 
+\index{CatcherAgent@{CatcherAgent}!AgentReset@{AgentReset}}
+\index{AgentReset@{AgentReset}!CatcherAgent@{CatcherAgent}}
+\subsubsection{\texorpdfstring{AgentReset()}{AgentReset()}}
+{\footnotesize\ttfamily override void Catcher\+Agent.\+Agent\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reset when done. eg. reset agents attributes, agents area etc. Is run everytime the agent is done with his job. Including the first run. 
+
+\mbox{\Hypertarget{class_catcher_agent_ab8de74f6eb16a987980e951a442ab247}\label{class_catcher_agent_ab8de74f6eb16a987980e951a442ab247}} 
+\index{CatcherAgent@{CatcherAgent}!CollectObservations@{CollectObservations}}
+\index{CollectObservations@{CollectObservations}!CatcherAgent@{CatcherAgent}}
+\subsubsection{\texorpdfstring{CollectObservations()}{CollectObservations()}}
+{\footnotesize\ttfamily override void Catcher\+Agent.\+Collect\+Observations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Collect all observations from the agents area to use for making decission. 
+
+\mbox{\Hypertarget{class_catcher_agent_aeb871db4779f1da715e829b40c6087b0}\label{class_catcher_agent_aeb871db4779f1da715e829b40c6087b0}} 
+\index{CatcherAgent@{CatcherAgent}!InitializeAgent@{InitializeAgent}}
+\index{InitializeAgent@{InitializeAgent}!CatcherAgent@{CatcherAgent}}
+\subsubsection{\texorpdfstring{InitializeAgent()}{InitializeAgent()}}
+{\footnotesize\ttfamily override void Catcher\+Agent.\+Initialize\+Agent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize the agent eg. initialize agents attributes with objects found on the scene. This method should be called one time before the training starts. 
+
+\mbox{\Hypertarget{class_catcher_agent_a16a95360c49d63206557576218ca42d2}\label{class_catcher_agent_a16a95360c49d63206557576218ca42d2}} 
+\index{CatcherAgent@{CatcherAgent}!OnCollisionEnter@{OnCollisionEnter}}
+\index{OnCollisionEnter@{OnCollisionEnter}!CatcherAgent@{CatcherAgent}}
+\subsubsection{\texorpdfstring{OnCollisionEnter()}{OnCollisionEnter()}}
+{\footnotesize\ttfamily void Catcher\+Agent.\+On\+Collision\+Enter (\begin{DoxyParamCaption}\item[{Collision}]{collision }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Check if agents gigidbody collided with other objects in the scene and react on it 
+
+
+\begin{DoxyParams}{Parameters}
+{\em collision} & Collision object to store and process the type of object the agent collided.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_catcher_agent_a92d790163f19c9d8ba3fb5655be02575}\label{class_catcher_agent_a92d790163f19c9d8ba3fb5655be02575}} 
+\index{CatcherAgent@{CatcherAgent}!agentArea@{agentArea}}
+\index{agentArea@{agentArea}!CatcherAgent@{CatcherAgent}}
+\subsubsection{\texorpdfstring{agentArea}{agentArea}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_agent_area}{Agent\+Area}} Catcher\+Agent.\+agent\+Area\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The Area the Agent is collecting observation and taking action 
+
+\mbox{\Hypertarget{class_catcher_agent_a2e5c259c9930c0d93aac6b64177c95c1}\label{class_catcher_agent_a2e5c259c9930c0d93aac6b64177c95c1}} 
+\index{CatcherAgent@{CatcherAgent}!agentRigidbody@{agentRigidbody}}
+\index{agentRigidbody@{agentRigidbody}!CatcherAgent@{CatcherAgent}}
+\subsubsection{\texorpdfstring{agentRigidbody}{agentRigidbody}}
+{\footnotesize\ttfamily Rigidbody Catcher\+Agent.\+agent\+Rigidbody\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Agents Rigid\+Body to apply physics on this agent. 
+
+\mbox{\Hypertarget{class_catcher_agent_a5158fa0d75280a5131037cd20d7e3afd}\label{class_catcher_agent_a5158fa0d75280a5131037cd20d7e3afd}} 
+\index{CatcherAgent@{CatcherAgent}!goall@{goall}}
+\index{goall@{goall}!CatcherAgent@{CatcherAgent}}
+\subsubsection{\texorpdfstring{goall}{goall}}
+{\footnotesize\ttfamily Game\+Object Catcher\+Agent.\+goall}
+
+
+
+This is a Game\+Object representing the goal this Agent is catching 
+
+\mbox{\Hypertarget{class_catcher_agent_af0211765225d989587ca410ac3124662}\label{class_catcher_agent_af0211765225d989587ca410ac3124662}} 
+\index{CatcherAgent@{CatcherAgent}!rayPerception@{rayPerception}}
+\index{rayPerception@{rayPerception}!CatcherAgent@{CatcherAgent}}
+\subsubsection{\texorpdfstring{rayPerception}{rayPerception}}
+{\footnotesize\ttfamily Ray\+Perception Catcher\+Agent.\+ray\+Perception\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Container for holding vector observations from the agents sorrounding. 
+
+\mbox{\Hypertarget{class_catcher_agent_a90d294825b74176926dfee484ab56af8}\label{class_catcher_agent_a90d294825b74176926dfee484ab56af8}} 
+\index{CatcherAgent@{CatcherAgent}!speed@{speed}}
+\index{speed@{speed}!CatcherAgent@{CatcherAgent}}
+\subsubsection{\texorpdfstring{speed}{speed}}
+{\footnotesize\ttfamily float Catcher\+Agent.\+speed}
+
+
+
+Speed parameter of the Agent 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/master/\+M\+L\+Agents/\+Chasing\+Agent/\+Assets/\+Scripts/Catcher\+Agent.\+cs\end{DoxyCompactItemize}

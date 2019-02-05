@@ -1,0 +1,260 @@
+\hypertarget{class_agent_area}{}\section{Agent\+Area Class Reference}
+\label{class_agent_area}\index{AgentArea@{AgentArea}}
+
+
+Setting up Agents area/environment  
+
+
+Inheritance diagram for Agent\+Area\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_agent_area}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_agent_area_acad084bde8fa76938b06896cfef7befb}{Update\+Score}} (float score)
+\begin{DoxyCompactList}\small\item\em Upadating the score text \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_agent_area_a99721d7bcaa1fb9dbd06ce797fe446c9}{Reset\+Area}} ()
+\begin{DoxyCompactList}\small\item\em Resets the area \end{DoxyCompactList}\item 
+I\+Enumerator \mbox{\hyperlink{class_agent_area_a2324888e59275143c15b71a4370cbc36}{Swap\+Ground\+Material}} (bool success)
+\begin{DoxyCompactList}\small\item\em Swap ground material, wait time seconds, then swap back to the regular material. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Game\+Object \mbox{\hyperlink{class_agent_area_a418d0b4fb39de6bd36d27e5be38cdd05}{agent}}
+\begin{DoxyCompactList}\small\item\em The cather agent \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_agent_area_aea62a791bd893662a5d2b42a6e58b145}{goal}}
+\begin{DoxyCompactList}\small\item\em Avoider agent \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_agent_area_aedfe9c4d21ccdf422e044875c2c85ae2}{ground}}
+\begin{DoxyCompactList}\small\item\em Areas ground \end{DoxyCompactList}\item 
+Material \mbox{\hyperlink{class_agent_area_aded12dd771ca702e85b5f543c5f74b20}{success\+Material}}
+\begin{DoxyCompactList}\small\item\em Material representing sucess \end{DoxyCompactList}\item 
+Material \mbox{\hyperlink{class_agent_area_a24e71471a4565b2c5d92562b4d8986a6}{failure\+Material}}
+\begin{DoxyCompactList}\small\item\em Material representing failure \end{DoxyCompactList}\item 
+Text\+Mesh\+Pro \mbox{\hyperlink{class_agent_area_a98d76e4d56dfb61b22f5c9a1bd7536df}{score\+Text}}
+\begin{DoxyCompactList}\small\item\em Visulazing catcher agents score in area \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_agent_area_a382c14ea2bc0912d97d99989db609775}{spawn\+Range}}
+\begin{DoxyCompactList}\small\item\em A range on which objects like the catcher or avoider agent will be spawned \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_agent_area_a0a2c9d32291c1ec805a5e1f87c1f3edb}{Start}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the area script \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_agent_area_a57cb9e3a0252d4d9d013f74df2413d7d}{Reset\+Agent}} ()
+\begin{DoxyCompactList}\small\item\em Reset the agents position \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_agent_area_aa575658613c279698f0edd6e75773f49}{Reset\+Goal}} ()
+\begin{DoxyCompactList}\small\item\em Resets avoider agents position \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_agent_area_a3f231325630d34930e330cff5e486266}{Randomly\+Place\+Object}} (Game\+Object object\+To\+Place, float range, float max\+Attempts)
+\begin{DoxyCompactList}\small\item\em Attempts to randomly place an object by checking a sphere around a potential location for collisions \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static float \mbox{\hyperlink{class_agent_area_a7dc794f33c82a1c00914d3171e73d034}{Get\+Collider\+Radius}} (Game\+Object obj)
+\begin{DoxyCompactList}\small\item\em Gets a local space radius that draws a circle on the X-\/Z plane around the boundary of the collider \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_agent_area_ae7d2b4aed875ee4bcc31c2c96d5068ef}\label{class_agent_area_ae7d2b4aed875ee4bcc31c2c96d5068ef}} 
+Renderer {\bfseries ground\+Renderer}
+\item 
+\mbox{\Hypertarget{class_agent_area_adf1c2adaeb49de66e615380928412b58}\label{class_agent_area_adf1c2adaeb49de66e615380928412b58}} 
+Material {\bfseries ground\+Material}
+\item 
+\mbox{\Hypertarget{class_agent_area_a7c0ed06093e89e910aab5eeed1442f2f}\label{class_agent_area_a7c0ed06093e89e910aab5eeed1442f2f}} 
+int {\bfseries not\+Ground\+Layer\+Mask}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Setting up Agents area/environment 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_agent_area_a7dc794f33c82a1c00914d3171e73d034}\label{class_agent_area_a7dc794f33c82a1c00914d3171e73d034}} 
+\index{AgentArea@{AgentArea}!GetColliderRadius@{GetColliderRadius}}
+\index{GetColliderRadius@{GetColliderRadius}!AgentArea@{AgentArea}}
+\subsubsection{\texorpdfstring{GetColliderRadius()}{GetColliderRadius()}}
+{\footnotesize\ttfamily static float Agent\+Area.\+Get\+Collider\+Radius (\begin{DoxyParamCaption}\item[{Game\+Object}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Gets a local space radius that draws a circle on the X-\/Z plane around the boundary of the collider 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & The game object to test\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The local space radius around the collider
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_agent_area_a3f231325630d34930e330cff5e486266}\label{class_agent_area_a3f231325630d34930e330cff5e486266}} 
+\index{AgentArea@{AgentArea}!RandomlyPlaceObject@{RandomlyPlaceObject}}
+\index{RandomlyPlaceObject@{RandomlyPlaceObject}!AgentArea@{AgentArea}}
+\subsubsection{\texorpdfstring{RandomlyPlaceObject()}{RandomlyPlaceObject()}}
+{\footnotesize\ttfamily void Agent\+Area.\+Randomly\+Place\+Object (\begin{DoxyParamCaption}\item[{Game\+Object}]{object\+To\+Place,  }\item[{float}]{range,  }\item[{float}]{max\+Attempts }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Attempts to randomly place an object by checking a sphere around a potential location for collisions 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object\+To\+Place} & The object to be randomly placed\\
+\hline
+{\em range} & The range in x and z to choose random points within.\\
+\hline
+{\em max\+Attempts} & Number of times to attempt placement\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_agent_area_a57cb9e3a0252d4d9d013f74df2413d7d}\label{class_agent_area_a57cb9e3a0252d4d9d013f74df2413d7d}} 
+\index{AgentArea@{AgentArea}!ResetAgent@{ResetAgent}}
+\index{ResetAgent@{ResetAgent}!AgentArea@{AgentArea}}
+\subsubsection{\texorpdfstring{ResetAgent()}{ResetAgent()}}
+{\footnotesize\ttfamily void Agent\+Area.\+Reset\+Agent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reset the agents position 
+
+\mbox{\Hypertarget{class_agent_area_a99721d7bcaa1fb9dbd06ce797fe446c9}\label{class_agent_area_a99721d7bcaa1fb9dbd06ce797fe446c9}} 
+\index{AgentArea@{AgentArea}!ResetArea@{ResetArea}}
+\index{ResetArea@{ResetArea}!AgentArea@{AgentArea}}
+\subsubsection{\texorpdfstring{ResetArea()}{ResetArea()}}
+{\footnotesize\ttfamily override void Agent\+Area.\+Reset\+Area (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets the area 
+
+
+\begin{DoxyParams}{Parameters}
+{\em agents} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_agent_area_aa575658613c279698f0edd6e75773f49}\label{class_agent_area_aa575658613c279698f0edd6e75773f49}} 
+\index{AgentArea@{AgentArea}!ResetGoal@{ResetGoal}}
+\index{ResetGoal@{ResetGoal}!AgentArea@{AgentArea}}
+\subsubsection{\texorpdfstring{ResetGoal()}{ResetGoal()}}
+{\footnotesize\ttfamily void Agent\+Area.\+Reset\+Goal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Resets avoider agents position 
+
+\mbox{\Hypertarget{class_agent_area_a0a2c9d32291c1ec805a5e1f87c1f3edb}\label{class_agent_area_a0a2c9d32291c1ec805a5e1f87c1f3edb}} 
+\index{AgentArea@{AgentArea}!Start@{Start}}
+\index{Start@{Start}!AgentArea@{AgentArea}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Agent\+Area.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialize the area script 
+
+\mbox{\Hypertarget{class_agent_area_a2324888e59275143c15b71a4370cbc36}\label{class_agent_area_a2324888e59275143c15b71a4370cbc36}} 
+\index{AgentArea@{AgentArea}!SwapGroundMaterial@{SwapGroundMaterial}}
+\index{SwapGroundMaterial@{SwapGroundMaterial}!AgentArea@{AgentArea}}
+\subsubsection{\texorpdfstring{SwapGroundMaterial()}{SwapGroundMaterial()}}
+{\footnotesize\ttfamily I\+Enumerator Agent\+Area.\+Swap\+Ground\+Material (\begin{DoxyParamCaption}\item[{bool}]{success }\end{DoxyParamCaption})}
+
+
+
+Swap ground material, wait time seconds, then swap back to the regular material. 
+
+/// 
+\begin{DoxyParams}{Parameters}
+{\em success} & representing sucess or failure\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_agent_area_acad084bde8fa76938b06896cfef7befb}\label{class_agent_area_acad084bde8fa76938b06896cfef7befb}} 
+\index{AgentArea@{AgentArea}!UpdateScore@{UpdateScore}}
+\index{UpdateScore@{UpdateScore}!AgentArea@{AgentArea}}
+\subsubsection{\texorpdfstring{UpdateScore()}{UpdateScore()}}
+{\footnotesize\ttfamily void Agent\+Area.\+Update\+Score (\begin{DoxyParamCaption}\item[{float}]{score }\end{DoxyParamCaption})}
+
+
+
+Upadating the score text 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_agent_area_a418d0b4fb39de6bd36d27e5be38cdd05}\label{class_agent_area_a418d0b4fb39de6bd36d27e5be38cdd05}} 
+\index{AgentArea@{AgentArea}!agent@{agent}}
+\index{agent@{agent}!AgentArea@{AgentArea}}
+\subsubsection{\texorpdfstring{agent}{agent}}
+{\footnotesize\ttfamily Game\+Object Agent\+Area.\+agent}
+
+
+
+The cather agent 
+
+\mbox{\Hypertarget{class_agent_area_a24e71471a4565b2c5d92562b4d8986a6}\label{class_agent_area_a24e71471a4565b2c5d92562b4d8986a6}} 
+\index{AgentArea@{AgentArea}!failureMaterial@{failureMaterial}}
+\index{failureMaterial@{failureMaterial}!AgentArea@{AgentArea}}
+\subsubsection{\texorpdfstring{failureMaterial}{failureMaterial}}
+{\footnotesize\ttfamily Material Agent\+Area.\+failure\+Material}
+
+
+
+Material representing failure 
+
+\mbox{\Hypertarget{class_agent_area_aea62a791bd893662a5d2b42a6e58b145}\label{class_agent_area_aea62a791bd893662a5d2b42a6e58b145}} 
+\index{AgentArea@{AgentArea}!goal@{goal}}
+\index{goal@{goal}!AgentArea@{AgentArea}}
+\subsubsection{\texorpdfstring{goal}{goal}}
+{\footnotesize\ttfamily Game\+Object Agent\+Area.\+goal}
+
+
+
+Avoider agent 
+
+\mbox{\Hypertarget{class_agent_area_aedfe9c4d21ccdf422e044875c2c85ae2}\label{class_agent_area_aedfe9c4d21ccdf422e044875c2c85ae2}} 
+\index{AgentArea@{AgentArea}!ground@{ground}}
+\index{ground@{ground}!AgentArea@{AgentArea}}
+\subsubsection{\texorpdfstring{ground}{ground}}
+{\footnotesize\ttfamily Game\+Object Agent\+Area.\+ground}
+
+
+
+Areas ground 
+
+\mbox{\Hypertarget{class_agent_area_a98d76e4d56dfb61b22f5c9a1bd7536df}\label{class_agent_area_a98d76e4d56dfb61b22f5c9a1bd7536df}} 
+\index{AgentArea@{AgentArea}!scoreText@{scoreText}}
+\index{scoreText@{scoreText}!AgentArea@{AgentArea}}
+\subsubsection{\texorpdfstring{scoreText}{scoreText}}
+{\footnotesize\ttfamily Text\+Mesh\+Pro Agent\+Area.\+score\+Text}
+
+
+
+Visulazing catcher agents score in area 
+
+\mbox{\Hypertarget{class_agent_area_a382c14ea2bc0912d97d99989db609775}\label{class_agent_area_a382c14ea2bc0912d97d99989db609775}} 
+\index{AgentArea@{AgentArea}!spawnRange@{spawnRange}}
+\index{spawnRange@{spawnRange}!AgentArea@{AgentArea}}
+\subsubsection{\texorpdfstring{spawnRange}{spawnRange}}
+{\footnotesize\ttfamily float Agent\+Area.\+spawn\+Range}
+
+
+
+A range on which objects like the catcher or avoider agent will be spawned 
+
+\mbox{\Hypertarget{class_agent_area_aded12dd771ca702e85b5f543c5f74b20}\label{class_agent_area_aded12dd771ca702e85b5f543c5f74b20}} 
+\index{AgentArea@{AgentArea}!successMaterial@{successMaterial}}
+\index{successMaterial@{successMaterial}!AgentArea@{AgentArea}}
+\subsubsection{\texorpdfstring{successMaterial}{successMaterial}}
+{\footnotesize\ttfamily Material Agent\+Area.\+success\+Material}
+
+
+
+Material representing sucess 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/master/\+M\+L\+Agents/\+Chasing\+Agent/\+Assets/\+Scripts/Agent\+Area.\+cs\end{DoxyCompactItemize}

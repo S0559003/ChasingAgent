@@ -2,18 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Script for the agents Player Brain. To controll the agent with manual keyboard input from user. 
+/// This is usefull to test the agent and the environment prior running the training with neuronal network.
+/// </summary>
 public class AgentBehavior : MonoBehaviour
 {
     public float speed = 10f;
     Rigidbody AgentRb;
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// Initialize agent.
+    /// </summary>
     void Start()
     {
         AgentRb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Run on each Frame. Get user input, rotate and move the agent according to that input. 
+    /// </summary>
     void Update()
     {
         float horizontal = Input.GetAxis("Horizontal");

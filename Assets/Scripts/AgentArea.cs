@@ -4,17 +4,48 @@ using UnityEngine;
 using MLAgents;
 using TMPro;
 
+/// <summary>
+/// Setting up Agents area/environment
+/// </summary>
+
 public class AgentArea : Area
 {
     [Header("Agent Area Objects")]
+
+    /// <summary>
+    /// The cather agent
+    /// </summary>
     public GameObject agent;
-    public GameObject ground;
-    public Material successMaterial;
-    public Material failureMaterial;
+
+    /// <summary>
+    /// Avoider agent
+    /// </summary>
     public GameObject goal;
+
+    /// <summary>
+    /// Areas ground
+    /// </summary>
+    public GameObject ground;
+
+    /// <summary>
+    /// Material representing sucess
+    /// </summary>
+    public Material successMaterial;
+
+    /// <summary>
+    /// Material representing failure
+    /// </summary>
+    public Material failureMaterial;
+
+    /// <summary>
+    /// Visulazing catcher agents score in area
+    /// </summary>
     public TextMeshPro scoreText;
 
     [HideInInspector]
+    /// <summary>
+    /// A range on which objects like the catcher or avoider agent will be spawned
+    /// </summary>
     public float spawnRange;
 
     private Renderer groundRenderer;
@@ -22,6 +53,10 @@ public class AgentArea : Area
 
     private int notGroundLayerMask;
 
+
+    /// <summary>
+    /// Initialize the area script
+    /// </summary>
     private void Start()
     {
         // Get the ground renderer so we can change the material when a goal is scored
@@ -36,6 +71,9 @@ public class AgentArea : Area
         ResetArea();
     }
 
+    /// <summary>
+    /// Upadating the score text
+    /// </summary>
     public void UpdateScore(float score)
     {
         scoreText.text = score.ToString("0.00");
@@ -54,6 +92,7 @@ public class AgentArea : Area
     /// <summary>
     /// Swap ground material, wait time seconds, then swap back to the regular material.
     /// </summary>
+    /// /// <param name="success">representing sucess or failure</param>
     public IEnumerator SwapGroundMaterial(bool success)
     {
 
@@ -74,29 +113,22 @@ public class AgentArea : Area
     }
 
     /// <summary>
-    /// Reset the agent
+    /// Reset the agents position
     /// </summary>
     private void ResetAgent()
     {
-
-       // Debug.Log("Reset agent: ");
         spawnRange = ground.GetComponent<Collider>().bounds.size.x / 4;
-       // Debug.Log("Ground size: " + ground.GetComponent<Collider>().bounds.size.x);
 
         // Reset location and rotation
         RandomlyPlaceObject(agent, spawnRange, 10);
     }
 
     /// <summary>
-    /// Resets all stumps in the area
+    /// Resets avoider agents position
     /// </summary>
     private void ResetGoal()
     {
-
-        //Debug.Log("Reset goal: ");
-        
         spawnRange = transform.GetChild(1).GetComponent<Collider>().bounds.size.x / 4;
-        // Debug.Log("Ground size: " + ground.transform.lossyScale+" Player size"+ agent.transform.lossyScale + "  goal: "+goal.transform.lossyScale);
         // Reset location and rotation
         RandomlyPlaceObject(goal, spawnRange, 10);
     }
@@ -113,7 +145,7 @@ public class AgentArea : Area
         objectToPlace.GetComponent<Collider>().enabled = false;
 
         // Calculate test radius 10% larger than the collider extents
-        float testRadius = GetColliderRadius(objectToPlace) * 1.3f;
+        float testRadius = GetColliderRadius(objectToPlace) * 2.5f;
 
         // Set a random rotation
         objectToPlace.transform.rotation = Quaternion.Euler(new Vector3(0f, UnityEngine.Random.Range(0f, 360f), 0f));

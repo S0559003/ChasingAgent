@@ -5,10 +5,13 @@ using UnityEngine;
 
 public class AgentAcademy : Academy
 {
+    /// <summary>
+    /// Array to store all the areas belonging to academy
+    /// </summary>
     private AgentArea[] areas;
 
     /// <summary>
-    /// Reset the academy
+    /// Find and reset all areas on belonging to this academy
     /// </summary>
     public override void AcademyReset()
     {

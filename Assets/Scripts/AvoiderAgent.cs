@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using MLAgents;
 
+/// <summary>
+/// Representing a concrete instance of an Agent. An Avoider Agent.
+/// Avoider is an Agent trying to avoid certain objects. 
+/// </summary>
 public class AvoiderAgent : Agent
 {
     public GameObject goall;
@@ -11,10 +15,11 @@ public class AvoiderAgent : Agent
     private Rigidbody agentRigidbody;
     private RayPerception rayPerception;
     private AgentArea agentArea;
-    bool goalFound = false;
 
-    float distBeforAction = 0f;
-
+    /// <summary>
+    /// Initialize the agent eg. initialize agents attributes with objects found on the scene. 
+    /// This method should be called one time before the training starts.
+    /// </summary>
     public override void InitializeAgent()
     {
         base.InitializeAgent();
@@ -25,6 +30,11 @@ public class AvoiderAgent : Agent
 
     }
 
+    /// <summary>
+    /// Reset when done. 
+    /// eg. reset agents attributes, agents area etc. Is run everytime the agent is 
+    /// done with his job. Including the first run.
+    /// </summary>
     public override void AgentReset()
     {
         // Reset
@@ -33,6 +43,9 @@ public class AvoiderAgent : Agent
         agentArea.ResetArea();
     }
 
+    /// <summary>
+    /// Collect all observations from the agents area to use for making decission.
+    /// </summary>
     public override void CollectObservations()
     {
         List<float> rayAngleList = new List<float>();
@@ -73,6 +86,11 @@ public class AvoiderAgent : Agent
         AddVectorObs(agentRigidbody.velocity);
     }
 
+    /// <summary>
+    /// Apply vector action. The agent receives decisions represented in a vector with floating point numbers.
+    /// </summary>
+    /// <param name="vectorAction">Vector containing float values from -1 to 1. Representing actions the agent will perform.</param>
+    /// <param name="textAction"></param>
     public override void AgentAction(float[] vectorAction, string textAction)
     {
         // Speed
@@ -108,6 +126,10 @@ public class AvoiderAgent : Agent
         }
     }
 
+    /// <summary>
+    /// Check if agents gigidbody collided with other objects in the scene and react on it
+    /// </summary>
+    /// <param name="collision">Collision object to store and process the type of object the agent collided.</param>
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("wall"))
