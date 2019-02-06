@@ -76,7 +76,7 @@ Folgende Quellen wurden als Hilfe zur Idenfindung und als Tutorials verwendet:
     
     Proximal Policy Optimization (PPO)
     
-    ![Abbildung PPO](https://github.com/S0559003/ChasingAgent/tree/master/docs/images/PPO.png "Abbildung PPO")
+    ![Abbildung PPO](https://github.com/S0559003/ChasingAgent/blob/master/docs/images/PPO.png "Abbildung PPO")
     
 * Hyperparameter
 
