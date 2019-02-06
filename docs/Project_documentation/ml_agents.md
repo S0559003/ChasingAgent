@@ -8,9 +8,12 @@
 
 ### Projektbeschreibung
 
-Chasing Game ist ein Projekt..
+Chasing Game ist ein Projekt welches zwei Charaktere mit gegensätzlichen Verhalten, jeweils mit künstlicher 
+Intelligenz steuert. 
 
-[Code Dokumenttion mit Doxygen](https://github.com/S0559003/ChasingAgent/blob/master/docs/html/index.html )
+Dabei gibt es einen Charakter welches  
+
+[Quellcode Dokumenttion mit Doxygen](https://github.com/S0559003/ChasingAgent/blob/master/docs/html/index.html )
 
 ---
 
