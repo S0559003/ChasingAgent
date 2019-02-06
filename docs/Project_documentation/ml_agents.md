@@ -1,4 +1,4 @@
-#Projekt Dokumentation KI in Robotik
+# Projekt Dokumentation KI in Robotik
 
 * Modul: Spezielle Anwendungen der Informatik - KI in der Robotik  (Wintersemester 18/19)
 * Student: Ali Bektas - S0559003
@@ -79,7 +79,7 @@ Folgende Quellen wurden als Hilfe zur Idenfindung und als Tutorials verwendet:
     
     Proximal Policy Optimization (PPO)
     
-    ![Abbildung PPO](https://github.com/S0559003/ChasingAgent/tree/master/docs/images/PPO.png "Abbildung PPO")
+    ![Abbildung PPO](https://github.com/S0559003/ChasingAgent/blob/master/docs/images/PPO.png "Abbildung PPO")
     
 * Hyperparameter
 
